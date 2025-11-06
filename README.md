@@ -13,5 +13,3 @@ Flask + Nginx + MariaDB example running on Ubuntu server.
 - MariaDB
 - Python (Flask + Gunicorn)
 
-## Author
-Created for CSC cPouta assignment (anonymous submission).
