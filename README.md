@@ -1,3 +1,7 @@
+HUOM VERTAISARVIOIJA, TÄSSÄ OIKEA UUSI IP SIVULLE!!!!!!! 
+
+http://195.148.22.191/
+
 # LEMP Example App
 
 Flask + Nginx + MariaDB example running on Ubuntu server.
