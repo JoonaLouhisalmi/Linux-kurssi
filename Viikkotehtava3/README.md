@@ -1,6 +1,7 @@
 !!!!!HUOM VERTAISARIOIJA!!!!!
 
 Streamlit sivulla näkyy jo viikkotehtävä4 data, jos arvioit 20.11.2025 eteenpäin.
+Ei pitäisi olla ongelma, mutta gitn koodit ei enää vastaa näkymää.
 
 
 
