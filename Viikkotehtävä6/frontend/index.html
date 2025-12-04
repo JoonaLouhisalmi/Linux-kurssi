@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Kubernetes Frontend</title>
+</head>
+<body>
+    <h1>Frontend toimii!</h1>
+    <p>Backend API-testit:</p>
+
+    <h3>Lisää käyttäjä tietokantaan:</h3>
+
+    <input id="name" placeholder="Nimi">
+    <input id="email" placeholder="Sähköposti">
+    <button onclick="addUser()">Lisää</button>
+
+<script>
+async function addUser() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+
+    const response = await fetch("/kube/api/add", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, email })
+    });
+
+    const data = await response.json();
+    alert("Vastaus: " + JSON.stringify(data));
+}
+</script>
+
+    <button onclick="loadData()">Hae tietokannasta</button>
+    <pre id="output"></pre>
+
+<script>
+function loadData() {
+    fetch('/kube/api/messages')
+        .then(r => r.json())
+        .then(data => {
+            document.getElementById('output').textContent =
+                JSON.stringify(data, null, 2);
+        });
+}
+</script>
+
+</body>
+</html>
