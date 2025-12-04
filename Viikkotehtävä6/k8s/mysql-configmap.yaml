@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-init-config
+data:
+  init.sql: |
+    CREATE DATABASE IF NOT EXISTS appdb;
+    CREATE USER IF NOT EXISTS 'appuser'@'%' IDENTIFIED BY 'changeme';
+    GRANT ALL PRIVILEGES ON appdb.* TO 'appuser'@'%';
+    FLUSH PRIVILEGES;
+
