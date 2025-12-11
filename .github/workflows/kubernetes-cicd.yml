@@ -25,8 +25,8 @@ jobs:
 
       - name: Run pytest
         working-directory: ./Viikkotehtävä6/backend
-        env.
-          PYTHONPATH: ${{ github.workspace }}/Viikkotehtävä6/backend 
+        env:
+          PYTHONPATH: ${{ github.workspace }}/Viikkotehtävä6/backend
         run: pytest -v
 
   deploy-kubernetes:
