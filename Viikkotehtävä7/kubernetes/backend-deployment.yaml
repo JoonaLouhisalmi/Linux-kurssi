@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: backend:latest
+        env:
+        - name: DB_HOST
+          value: mysql
+        - name: DB_USER
+          value: appuser
+        - name: DB_PASSWORD
+          value: changeme
+        - name: DB_NAME
+          value: appdb
+        ports:
+        - containerPort: 8000

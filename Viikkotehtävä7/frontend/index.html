@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CI/CD Frontend</title>
+</head>
+<body>
+    <h1>CI/CD Frontend toimii!</h1>
+
+    <button onclick="loadData()">Hae tietokannasta</button>
+    <pre id="output"></pre>
+
+    <script>
+        async function loadData() {
+            const res = await fetch("/cicd/api/messages");
+            const data = await res.json();
+            document.getElementById("output").textContent =
+                JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>
