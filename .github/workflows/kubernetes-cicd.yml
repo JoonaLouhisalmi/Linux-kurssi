@@ -26,8 +26,11 @@ jobs:
           pip install -r requirements.txt pytest
 
       - name: Run pytest
-        working-directory: Viikkotehtävä6/backend
-        run: pytest
+        working-directory: ./Viikkotehtävä6/backend
+        env:
+         PYTHONPATH: .
+         run: pytest -q
+
 
   deploy-to-k3s:
     name: Build & deploy to k3s
