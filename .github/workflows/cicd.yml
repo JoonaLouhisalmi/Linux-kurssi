@@ -29,10 +29,12 @@ jobs:
       - name: Build & push frontend
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./Viikkotehtävä6/frontend
           file: Viikkotehtävä6/frontend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/lemp-frontend:latest
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/lemp-frontend:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/lemp-frontend:${{ github.sha }}
 
       - name: Deploy to VM
         uses: appleboy/ssh-action@v1.0.3
